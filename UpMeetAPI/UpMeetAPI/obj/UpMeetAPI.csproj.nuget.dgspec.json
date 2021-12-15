@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\me\\source\\repos\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj": {}
+    "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\me\\source\\repos\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj": {
+    "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\me\\source\\repos\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
+        "projectUniqueName": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
         "projectName": "UpMeetAPI",
-        "projectPath": "C:\\Users\\me\\source\\repos\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
-        "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\me\\source\\repos\\UpMeetAPI\\UpMeetAPI\\obj\\",
+        "projectPath": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
+        "packagesPath": "C:\\Users\\n\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\n\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -23,7 +23,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.pkg.github.com/watsonst/index.json": {}
+          "https://nuget.pkg.github.com/ennemmjones/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -40,6 +40,22 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.21, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
