@@ -37,138 +37,32 @@ namespace UpMeetAPI.Controllers
             return result;
 
         }
-        //ID int Identity(1,1) primary key,
-        //EventID int foreign key references Events(EventID),
-        //UserID int not null
-        // GET: Favorites
-        public async Task<IActionResult> Index()
+
+        [HttpGet]
+        [Route("list")]
+        public async Task<IActionResult> GetFavorites()
         {
-            return View(await _context.Favorites.ToListAsync());
+            var favorites = await _context.Favorites.ToListAsync();
+
+            var result = new OkObjectResult(favorites);
+            return result;
+
         }
 
-        // GET: Favorites/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [HttpDelete]
+        [Route("Remove")]
+        public async Task<IActionResult> RemoveFavorite(int id)
         {
-            if (id == null)
+            var favorite = await _context.Favorites.FirstOrDefaultAsync(m => m.ID == id);
+            if (favorite == null)
             {
-                return NotFound();
+                return new OkResult();
             }
-
-            var favorites = await _context.Favorites
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (favorites == null)
-            {
-                return NotFound();
-            }
-
-            return View(favorites);
-        }
-
-        // GET: Favorites/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Favorites/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,EventID,UserID")] Favorites favorites)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(favorites);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(favorites);
-        }
-
-        // GET: Favorites/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var favorites = await _context.Favorites.FindAsync(id);
-            if (favorites == null)
-            {
-                return NotFound();
-            }
-            return View(favorites);
-        }
-
-        // POST: Favorites/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,EventID,UserID")] Favorites favorites)
-        {
-            if (id != favorites.ID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(favorites);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FavoritesExists(favorites.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(favorites);
-        }
-
-        // GET: Favorites/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var favorites = await _context.Favorites
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (favorites == null)
-            {
-                return NotFound();
-            }
-
-            return View(favorites);
-        }
-
-        // POST: Favorites/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var favorites = await _context.Favorites.FindAsync(id);
-            _context.Favorites.Remove(favorites);
+            _context.Favorites.Remove(favorite);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
-        private bool FavoritesExists(int id)
-        {
-            return _context.Favorites.Any(e => e.ID == id);
+            var result = new OkResult();
+            return result;
         }
     }
 }
