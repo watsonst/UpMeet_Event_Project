@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventListComponent } from './events/event-list/event-list.component';
 
 const routes: Routes = [
-  // { path: "eventlist", component: EventListComponent},
+   { path: "eventlist", component: EventListComponent},
 
 ];
 
