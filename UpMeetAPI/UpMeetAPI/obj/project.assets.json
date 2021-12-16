@@ -8474,19 +8474,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\n\\.nuget\\packages\\": {}
+    "C:\\Users\\me\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
+      "projectUniqueName": "C:\\Users\\me\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
       "projectName": "UpMeetAPI",
-      "projectPath": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
-      "packagesPath": "C:\\Users\\n\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\n\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\obj\\",
+      "projectPath": "C:\\Users\\me\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\UpMeetAPI.csproj",
+      "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\me\\source\\repos\\UpMeet_Event_Project\\UpMeetAPI\\UpMeetAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\n\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8495,7 +8495,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.pkg.github.com/ennemmjones/index.json": {}
+        "https://nuget.pkg.github.com/watsonst/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -8546,7 +8546,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
