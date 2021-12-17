@@ -11,11 +11,16 @@ export class EventPreviewsComponent implements OnInit {
 
   @Input() content!: Events;
 
+  linkToEvent: string = `#`;
+
   constructor(
     private router: Router,
   ) { }
 
   ngOnInit(): void {
+    this.linkToEvent = `/events/${this.content.eventID}`
+    
   }
+  
 
 }
