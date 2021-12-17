@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from  '@angular/router';
+import { Events } from '../../models/Events';
 
 @Component({
   selector: 'app-event-previews',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventPreviewsComponent implements OnInit {
 
-  constructor() { }
+  @Input() content!: Events;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }

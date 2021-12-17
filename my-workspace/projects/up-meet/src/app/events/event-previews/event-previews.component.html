@@ -1,1 +1,16 @@
-<p>event-previews works!</p>
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"> {{ content.title }}</h5>
+          <p class="card-text">{{ content.details }}</p>
+          <!-- <a href="{{ linkToArticle }}"  class="btn btn-primary">Open Article</a> -->
+          <!-- <a routerLink="{{ linkToArticle }}" routerLinkActive="active" class="btn btn-primary">Open Event</a> -->
+          <!-- <button (click)="goToArticle()" class="btn btn-primary">Article router</button> -->
+          <!-- <button (click)="triggerOutput()" class="btn btn-primary">Increment Counter</button> -->
+          <p class="card-text"><small class="text-muted">{{ content.organization }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,7 +8,9 @@ import { EventsApiService } from '../../services/events-api.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
+
   events: Events[] = []
+  
   constructor(
     private eventsAPISvc: EventsApiService
   ) { }

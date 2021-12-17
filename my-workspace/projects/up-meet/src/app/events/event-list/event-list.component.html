@@ -1,1 +1,4 @@
-<p>event-list works!</p>
+
+<div class="d-flex flex-column align-items-center">
+    <app-event-previews *ngFor="let Event of events" [content]="Event"></app-event-previews>
+</div>
