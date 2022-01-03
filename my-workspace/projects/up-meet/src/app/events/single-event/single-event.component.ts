@@ -12,9 +12,13 @@ import { EventsApiService } from '../../services/events-api.service';
 export class SingleEventComponent implements OnInit {
   events?: Events ;
   @Input() event!: Events;
-  titleId: Number = 0
-  dateId?: String = "N/A"
-  //titleId?: String = "N/A"
+  eventId: Number = 0;
+  title: String = "N/A";
+  date: String = "N/A";
+  location: String = "N/A";
+  organization: String = "N/A";
+  details: String = "N/A";
+ 
   
   
 
@@ -27,7 +31,7 @@ export class SingleEventComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if(id) {
-      this.titleId = Number(id);
+      this.eventId = Number(id);
     }
     // const date = this.route.snapshot.queryParamMap
 
@@ -36,15 +40,85 @@ export class SingleEventComponent implements OnInit {
     // }
     this.eventsAPISvc.getArticle().subscribe((events) => {
      for(var i = 0; i < events.length; i++)
-     {if (events[i].eventID == this.titleId)
+     {if (events[i].eventID == this.eventId)
       {
         this.events = events[i]
       }
 
      }
-     console.log(this.events?.title)
+     console.log(this.events?.eventID)
       
     })
+
+  
+
+    this.eventsAPISvc.getArticle().subscribe((events) => {
+      for(var i = 0; i < events.length; i++)
+      {if (events[i].title == this.title)
+       {
+         this.events = events[i]
+       }
+ 
+      }
+      console.log(this.events?.title)
+       
+     })
+
+
+     this.eventsAPISvc.getArticle().subscribe((events) => {
+      for(var i = 0; i < events.length; i++)
+      {if (events[i].date == this.date)
+       {
+         this.events = events[i]
+       }
+ 
+      }
+      console.log(this.events?.date)
+       
+     })
+
+     this.eventsAPISvc.getArticle().subscribe((events) => {
+      for(var i = 0; i < events.length; i++)
+      {if (events[i].location == this.location)
+       {
+         this.events = events[i]
+       }
+ 
+      }
+      console.log(this.events?.location)
+       
+     })
+
+     this.eventsAPISvc.getArticle().subscribe((events) => {
+      for(var i = 0; i < events.length; i++)
+      {if (events[i].organization == this.organization)
+       {
+         this.events = events[i]
+       }
+ 
+      }
+      console.log(this.events?.organization)
+       
+     })
+     this.eventsAPISvc.getArticle().subscribe((events) => {
+      for(var i = 0; i < events.length; i++)
+      {if (events[i].details == this.details)
+       {
+         this.events = events[i]
+       }
+ 
+      }
+      console.log(this.events?.details)
+       
+     })
+
+
+
+
+
+
+
+
   }
   goToEvents() {
     this.router.navigate(["home"])
