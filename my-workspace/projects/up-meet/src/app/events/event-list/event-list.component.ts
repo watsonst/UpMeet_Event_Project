@@ -20,7 +20,7 @@ export class EventListComponent implements OnInit {
     this.addDefaultEvents();
   }
   addDefaultEvents() {
-    this.eventsAPISvc.getArticle().subscribe((events) => {
+    this.eventsAPISvc.getEvents().subscribe((events) => {
       console.log("[INFO]")
       console.log(events);
       this.events = events
