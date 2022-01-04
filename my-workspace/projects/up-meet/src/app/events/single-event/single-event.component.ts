@@ -38,7 +38,7 @@ export class SingleEventComponent implements OnInit {
     // if(date) {
     //   this.dateId = date;
     // }
-    this.eventsAPISvc.getArticle().subscribe((events) => {
+    this.eventsAPISvc.getEvents().subscribe((events) => {
      for(var i = 0; i < events.length; i++)
      {if (events[i].eventID == this.eventId)
       {
@@ -52,7 +52,7 @@ export class SingleEventComponent implements OnInit {
 
   
 
-    this.eventsAPISvc.getArticle().subscribe((events) => {
+    this.eventsAPISvc.getEvents().subscribe((events) => {
       for(var i = 0; i < events.length; i++)
       {if (events[i].title == this.title)
        {
@@ -65,7 +65,7 @@ export class SingleEventComponent implements OnInit {
      })
 
 
-     this.eventsAPISvc.getArticle().subscribe((events) => {
+     this.eventsAPISvc.getEvents().subscribe((events) => {
       for(var i = 0; i < events.length; i++)
       {if (events[i].date == this.date)
        {
@@ -77,7 +77,7 @@ export class SingleEventComponent implements OnInit {
        
      })
 
-     this.eventsAPISvc.getArticle().subscribe((events) => {
+     this.eventsAPISvc.getEvents().subscribe((events) => {
       for(var i = 0; i < events.length; i++)
       {if (events[i].location == this.location)
        {
@@ -89,7 +89,7 @@ export class SingleEventComponent implements OnInit {
        
      })
 
-     this.eventsAPISvc.getArticle().subscribe((events) => {
+     this.eventsAPISvc.getEvents().subscribe((events) => {
       for(var i = 0; i < events.length; i++)
       {if (events[i].organization == this.organization)
        {
@@ -100,7 +100,7 @@ export class SingleEventComponent implements OnInit {
       console.log(this.events?.organization)
        
      })
-     this.eventsAPISvc.getArticle().subscribe((events) => {
+     this.eventsAPISvc.getEvents().subscribe((events) => {
       for(var i = 0; i < events.length; i++)
       {if (events[i].details == this.details)
        {

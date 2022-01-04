@@ -9,6 +9,7 @@ import { Events } from "../models/Events";
 
 )
 export class EventsApiService {
+
     constructor(
         private httpClient: HttpClient
 
@@ -18,10 +19,10 @@ export class EventsApiService {
     
 
     
-    getArticle(): Observable<Events[]> {
+    getEvents(): Observable<Events[]> {
         return this.httpClient.get<Events[]>("https://localhost:44347/events/list")
     }
-    // createArticle(request: CreateARticleRequest): Observable<Article> {
-    //     return this.httpClient.post<Article>("https://localhost:44328/Articles/new/", request)
-    // }
+    createEvent(event: Events): Observable<Events> {
+        return this.httpClient.post<Events>("https://localhost:44347/events/new/", event)
+    }
 }
