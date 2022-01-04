@@ -8,12 +8,13 @@ import { EventsModule } from './events/events.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventsApiService } from './services/events-api.service';
-
+import { FavoritesModule } from './favorites/favorites.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,8 @@ import { EventsApiService } from './services/events-api.service';
     EventsModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FavoritesModule
     
   ],
   providers: [EventsApiService],

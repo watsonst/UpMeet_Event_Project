@@ -5,6 +5,7 @@ import { EventPreviewsComponent } from './event-previews/event-previews.componen
 import { EventListComponent } from './event-list/event-list.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import { FormsModule } from '@angular/forms';
+import { FavoritesModule } from '../favorites/favorites.module';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   ],  
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    FavoritesModule
   ]
 })
 export class EventsModule { }

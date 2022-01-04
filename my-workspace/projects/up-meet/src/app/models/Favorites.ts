@@ -1,7 +1,7 @@
-export class Events {
+export class Favorites {
     constructor(
-        public ID: Number,
-        public EventID: Number, 
-        public UserID: String,        
+        public id: Number,
+        public eventID: Number, 
+        public userID: String,        
     ){}
 }

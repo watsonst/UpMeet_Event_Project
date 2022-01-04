@@ -5,3 +5,11 @@
 <h1>{{ events?.location }}</h1>
 <h1>{{ events?.organization }}</h1>
 <h1>{{ events?.details }}</h1>
+
+
+<div class="form-group"> 
+    <label>UserId</label>
+    <input type="text"  [(ngModel)]="userID">
+    
+</div>
+<button (click)="newFavorite()">Add To Favorites</button>

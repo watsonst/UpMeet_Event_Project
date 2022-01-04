@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap} from '@angular/router'
 import { Events } from '../../models/Events';
+import { Favorites } from '../../models/Favorites';
 import { EventsApiService } from '../../services/events-api.service';
+import { FavoritesApiService } from '../../services/favorites-api.service';
 
 
 @Component({
@@ -18,6 +20,8 @@ export class SingleEventComponent implements OnInit {
   location: String = "N/A";
   organization: String = "N/A";
   details: String = "N/A";
+  userID: String = "N/A";
+  ID: Number = 0;
  
   
   
@@ -25,7 +29,8 @@ export class SingleEventComponent implements OnInit {
   constructor(
     private eventsAPISvc: EventsApiService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private favoritesAPISvc: FavoritesApiService
   ) { }
 
   ngOnInit(): void {
@@ -112,17 +117,19 @@ export class SingleEventComponent implements OnInit {
        
      })
 
-
-
-
-
-
-
-
   }
   goToEvents() {
     this.router.navigate(["home"])
   }
+  newFavorite() {
+    let favorite  = new Favorites(this.ID, this.eventId, this.userID)
+    this.favoritesAPISvc.createFavorite(favorite).subscribe((favorite) => {
+      console.log("[INFO]")
+      console.log(favorite);
+      
+  })
+  }
+
 }
 
 // public eventID: Number, 
