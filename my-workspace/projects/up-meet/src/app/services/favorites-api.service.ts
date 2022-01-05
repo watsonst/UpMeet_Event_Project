@@ -23,7 +23,13 @@ export class FavoritesApiService {
     getFavorites(): Observable<Favorites[]> {
         return this.httpClient.get<Favorites[]>("https://localhost:44347/favorites/list")
     }
+
     createFavorite(favorite: Favorites): Observable<Favorites> {
         return this.httpClient.post<Favorites>("https://localhost:44347/favorites/new/", favorite)
     }
+
+    deleteFavorite(id: Number): Observable<unknown> {
+        return this.httpClient.delete(`https://localhost:44347/favorites/remove?ID=${ id }`)
+    }
+
 }
