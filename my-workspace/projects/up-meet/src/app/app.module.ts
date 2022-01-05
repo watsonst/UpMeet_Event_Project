@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventsApiService } from './services/events-api.service';
 import { FavoritesModule } from './favorites/favorites.module';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
   
   ],
   imports: [
