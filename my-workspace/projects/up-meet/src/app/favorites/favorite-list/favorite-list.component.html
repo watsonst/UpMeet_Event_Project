@@ -1,4 +1,32 @@
 
 <div class="d-flex flex-column align-items-center">
-    <p *ngFor="let Favorite of favorites"> {{ Favorite.id }} </p>
+    <p>List of all Favorites</p>
+    <p *ngFor="let Favorite of favorites"> ID:{{ Favorite.id }} EventID:{{ Favorite.eventID }}  UserID:{{ Favorite.userID}} <button (click)="deleteFavorite(Favorite.id)">Delete</button></p>
+</div>
+
+<div class="form-group"> 
+    <label>Id</label>
+    <input type="text"  [(ngModel)]="ID">
+    
+</div>
+<button (click)="deleteFavorite(ID)">Delete</button>
+
+
+<div class="form-group"> 
+    <label>UserId</label>
+    <input type="text"  [(ngModel)]="userID">
+    
+</div>
+<button (click)="userFavoriteList()">Display Favorites for user</button>
+
+
+<div class="d-flex flex-column align-items-center">
+    <p>Favorites for {{ userID }}</p>
+    <p *ngFor="let Favorite of userFavorites"> ID:{{ Favorite.id }} EventID:{{ Favorite.eventID }}  UserID:{{ Favorite.userID}} <button (click)="deleteFavorite(Favorite.id)">Delete</button></p>
+</div>
+
+<div class="d-flex flex-column align-items-center">
+    <p>Events from {{ userID }}'s Favorites list</p>
+    <p *ngFor="let event of userEvents"> EventID:{{ event.eventID }} Event Title:{{ event.title }}           
+    </p>
 </div>
