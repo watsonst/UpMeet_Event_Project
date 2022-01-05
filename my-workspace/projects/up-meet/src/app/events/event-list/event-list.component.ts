@@ -11,6 +11,8 @@ export class EventListComponent implements OnInit {
 
   events: Events[] = []
   
+  
+
   constructor(
     private eventsAPISvc: EventsApiService
   ) { }
@@ -18,6 +20,7 @@ export class EventListComponent implements OnInit {
   ngOnInit(): void {
     
     this.addDefaultEvents();
+   
   }
   
   addDefaultEvents() {

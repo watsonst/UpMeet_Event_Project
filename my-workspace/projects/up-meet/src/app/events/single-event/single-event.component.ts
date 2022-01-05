@@ -20,7 +20,7 @@ export class SingleEventComponent implements OnInit {
   location: String = "N/A";
   organization: String = "N/A";
   details: String = "N/A";
-  userID: String = "N/A";
+  userID: String = "";
   ID: Number = 0;
  
   
