@@ -124,7 +124,7 @@ export class SingleEventComponent implements OnInit {
   newFavorite() {
     let favorite  = new Favorites(this.ID, this.eventId, this.userID)
     this.favoritesAPISvc.createFavorite(favorite).subscribe((favorite) => {
-      console.log("[INFO]")
+      console.log("STUFF")
       console.log(favorite);
       
   })
