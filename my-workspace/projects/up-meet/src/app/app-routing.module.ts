@@ -10,6 +10,7 @@ const routes: Routes = [
    { path:"events/:id", component: SingleEventComponent },
    { path: "new", component: NewEventComponent},
    { path: "favorites/list", component: FavoriteListComponent},
+   { path: "", redirectTo: "/home", pathMatch: "prefix"}
 
 
 ];

@@ -5,6 +5,10 @@ export class Events {
         public date: String,
         public location: String,
         public organization: String,
-        public details: String
+        public details: String,
+        
     ){}
+     id: Number | undefined;
+     userID: String | undefined;
+
 }

@@ -13,17 +13,20 @@ import { FavoritesApiService } from '../../services/favorites-api.service';
 export class FavoriteListComponent implements OnInit {
 
   favorites: Favorites[] = [];
-  userID: String = "N/A";
   events: Events[] = [];
+
+  userID: String = "N/A";
   userFavorites: Favorites[] = [];
   userEvents: Events[] = [];
   ID: Number = 0;
+  combinedList: Events[] = [];
 
   constructor(
     private favoriteAPISvc: FavoritesApiService,
     private eventsAPISvc: EventsApiService
 
   ) { }
+  
 
   ngOnInit(): void {
     this.addDefaultFavorites();
@@ -46,6 +49,7 @@ addDefaultEvents() {
   })
 }
 
+
 userFavoriteList() {
   let userInput = this.userID;
   let favorites = this.favorites;
@@ -53,8 +57,26 @@ userFavoriteList() {
   console.log("[INFO userFavorites]")
   console.log(this.userFavorites)
   this.userEventsList();
- 
+  this.mergedListAddingFavoriteDetailsToEvents();
 }
+
+mergedListAddingFavoriteDetailsToEvents() {
+  let userFavorites = this.userFavorites;
+  let events = this.events;
+  for (let i = 0; i < userFavorites.length; i++) {
+    
+    let singleEvent = events.find(e => e.eventID === userFavorites[i].eventID) 
+    if (singleEvent != null){
+      singleEvent.id = userFavorites[i].id;
+      singleEvent.eventID = userFavorites[i].eventID;
+      this.combinedList.push(singleEvent);
+
+    }
+
+  }
+
+}
+
 userEventsList() {
   let userFavorites = this.userFavorites;
   let events  = this.events;
@@ -63,9 +85,13 @@ userEventsList() {
   console.log("[INFO userEvents]")
   console.log(this.userEvents);
 }
-deleteFavorite(id: Number) {
+deleteFavorite(id: Number | undefined) {
+  if (id != undefined)
   this.favoriteAPISvc.deleteFavorite(id).subscribe();
+  window.location.reload();
 }
+
+
 
 
 }
